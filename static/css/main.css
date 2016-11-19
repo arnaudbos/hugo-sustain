@@ -195,7 +195,7 @@ pre {
   background-image: -ms-linear-gradient(transparent 50%,rgba(69,142,209,.04) 50%);
   background-image: -o-linear-gradient(transparent 50%,rgba(69,142,209,.04) 50%);
   background-image: linear-gradient(transparent 50%,rgba(69,142,209,.04) 50%);
-  background-size: 3em 3em;
+  background-size: 2.99em 2.99em;
   background-origin: content-box;
   overflow: auto;
   max-height: 50rem;
@@ -207,10 +207,11 @@ pre {
   border-radius: 0;
 }
 
-code, pre[class*=language-] {
+pre > code[class*=hljs] {
   color: #000;
   background-color: #fdfdfd;
   font-family: Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;
+  font-size: 13px;
   direction: ltr;
   text-align: left;
   white-space: pre;
@@ -225,6 +226,38 @@ code, pre[class*=language-] {
   -moz-hyphens: none;
   -ms-hyphens: none;
   hyphens: none;
+}
+
+code.has-jax {
+  font: inherit;
+  font-size: 100%;
+  background: inherit;
+  border: inherit;
+  color: #9c0707;
+}
+
+blockquote {
+  color: #000;
+  background-color: #fdfdfd;
+  font-family: Consolas,Monaco,'Andale Mono','Ubuntu Mono',monospace;
+  font-size: 13px;
+  -webkit-box-shadow: -1px 0 0 0 #358ccb,0 0 0 1px #dfdfdf;
+  -moz-box-shadow: -1px 0 0 0 #358ccb,0 0 0 1px #dfdfdf;
+  box-shadow: -1px 0 0 0 #358ccb,0 0 0 1px #dfdfdf;
+  border-left: 10px solid #18a3b9;
+  overflow: auto;
+  max-height: 50rem;
+  height: 100%;
+  padding: 0 1em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border-radius: 0;
+}
+
+.hljs {
+  background: inherit;
+  padding: 0;
 }
 
 /* Footer
