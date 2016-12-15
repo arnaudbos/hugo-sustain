@@ -236,7 +236,7 @@ body {
 
 .blogpost code.has-jax {
   font: inherit;
-  font-size: 100%;
+  font-size: 14px;
   background: inherit;
   color: #333;
 }
