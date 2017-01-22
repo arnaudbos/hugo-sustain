@@ -1,0 +1,13 @@
+{{ "<!-- EmojiOne -->" | safeHTML }}
+<script src="https://cdn.jsdelivr.net/emojione/2.2.7/lib/js/emojione.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/emojione/2.2.7/assets/css/emojione.min.css"/>
+
+<script>
+(function (){
+  var emojis = document.getElementsByClassName('emoji');
+  for(var i=0; i<emojis.length; i++){
+	  var content = emojis[i].textContent;
+    emojis[i].innerHTML = emojione.shortnameToImage(content);
+  }
+})();
+</script>

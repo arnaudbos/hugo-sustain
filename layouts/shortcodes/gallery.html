@@ -1,4 +1,4 @@
 <div class="gallery" itemscope itemtype="http://schema.org/ImageGallery">
 {{ .Inner }}
-<div class="title">{{ .Get "title" }}</div>
+{{ with .Get "title" }}<div class="title">{{.}}</div>{{ end }}
 </div>
