@@ -290,22 +290,41 @@ body {
   list-style-type: none;
 }
 
-.blogpost .fold {
+.fold {
   font-size: 13px;
 }
-.blogpost .fold.title {
+
+.fold.title {
   margin-bottom: 15px;
   display: block;
 }
-.blogpost .fold.content {
+
+.fold.content {
   font-size: 13px;
-  border-left: 5px solid #ccc !important;
-  margin-left: -15px !important;
-  padding-left: 15px !important;
-  padding-bottom: 5px !important;
-  margin-bottom: 15px !important;
-  margin-top: 10px !important;
-  padding-top: 5px !important;
+  padding-left: 15px;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+  margin-top: 10px;
+  padding-top: 5px;
+  border: 1px solid #eee;
+  border-left: 5px solid #ccc;
+  border-radius: 3px;
+}
+
+.fold.content-danger {
+  border-left-color: #ce4844;
+}
+.fold.content-warning {
+  border-left-color: #aa6708;
+}
+.fold.content-info {
+  border-left-color: #1b809e;
+}
+.fold.content-primary {
+  border-left-color: #337ab7;
+}
+.fold.content-success {
+  border-left-color: #27a822;
 }
 
 .scroll-to-top {
