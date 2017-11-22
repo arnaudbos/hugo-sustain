@@ -1,4 +1,5 @@
-<code class="language-klipse"
-  {{ with .Get "preamble"}}data-preamble="{{ . }}"{{ end }}>
-{{ .Get "content" }}
-</code>
+<div class="language-klipse"
+  {{ with .Get "preamble"}}data-preamble="{{ . }}"{{ end }}
+  >
+  {{ .Inner }}
+</div>
