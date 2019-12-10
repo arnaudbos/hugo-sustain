@@ -29,8 +29,11 @@
         <div class="panel panel-default">
           <div class="panel-body">
             <div class="blogpost">
-              {{ (replaceRE "<!--\\s*[t|T][o|O][c|C]\\s*-->" .TableOfContents .Content) | safeHTML }}
+              {{ (replaceRE "<!--\\s*[t|T][o|O][c|C]\\s*-->" (printf "<h2 id=\"table-of-contents\">Table Of Contents</h2><div id=\"toc\" class=\"well col-md-12\">%s</div>" .TableOfContents ) .Content ) | safeHTML }}
               <hr>
+              <p>This blog uses <a target="_blank" href="https://web.hypothes.is/">Hypothesis</a> for public and private (group) comments.</p>
+              <p>You can <em>annotate</em> or <em>highlight</em> words or paragraphs directly by selecting the text!</p>
+              <p>If you want to leave a general comment or read what others have to say, please use the collapsible panel on the right of this page.</p>
               <div class="related-posts">
                 <h5>Related Posts</h5>
                 {{ range first 3 ( where ( where .Site.Pages.ByDate.Reverse ".Params.tags" "intersect" .Params.tags ) "Permalink" "!=" .Permalink ) }}
@@ -53,7 +56,7 @@
             </div>
           </div>
           <hr>
-        {{ partial "disqus" . }}
+        {{ partial "hypothesis" . }}
         </div>
       </div>
     </div>
