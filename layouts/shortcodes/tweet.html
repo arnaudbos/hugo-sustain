@@ -1,0 +1,23 @@
+{{- $id := or (.Get "id") "" -}}
+{{- $user := or (.Get "user") "" -}}
+{{- if and $id $user -}}
+    {{- template "render-tweet" (dict "id" $id "user" $user "name" .Name "position" .Position) -}}
+{{- else -}}
+    {{- errorf "The %q shortcode requires two named parameters: user and id. See %s" .Name .Position -}}
+{{- end -}}
+
+{{- define "render-tweet" -}}
+    {{- $url := printf "https://twitter.com/%v/status/%v" .user .id -}}
+    {{- $query := querify "url" $url -}}
+    {{- $request := printf "https://publish.twitter.com/oembed?%s" $query -}}
+    {{- with getJSON $request -}}
+        {{- with .Err -}}
+            {{- errorf "%s" . -}}
+        {{- else -}}
+            {{- $json := . -}}
+            {{- $json.html | safeHTML -}}
+        {{- end -}}
+    {{- else -}}
+        {{- warnf "The %q shortcode was unable to retrieve the remote data. See %s" .name .position -}}
+    {{- end -}}
+{{- end -}}
